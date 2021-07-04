@@ -1,7 +1,8 @@
 ---
 title: This is my second post.
 description: This is a post on My Blog about leveraging agile frameworks.
-date: 2018-07-04
+image: https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80
+date: 2021-02-01
 tags:
   - number 2
 layout: layouts/post.njk
