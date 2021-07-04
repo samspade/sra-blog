@@ -4,9 +4,9 @@
   --lightgray: #e0e0e0;
   --gray: #C0C0C0;
   --darkgray: #333;
-  --navy: #17050F;
-  --blue: #082840;
   --white: #fff;
+  --hrgrey: #e7e7e7;
+  --outline: #eb984e;
 }
 
 /* Global stylesheet */
@@ -125,8 +125,7 @@ grid-row-start:1;
 grid-row-end:1;
 grid-column-start: 1;
 grid-column-end:4;
-border-bottom: 1px solid var(--darkgray);
-margin-top: 1rem;
+border-bottom: 1px solid var(--hrgrey);
 display:grid;
 grid-template-columns: 1fr minmax(75ch, 1170px) 1fr;
 grid-template-rows: fit-content, fit-content;
@@ -167,16 +166,23 @@ grid-template-rows: fit-content, fit-content;
 
 }
 
+.logo a {
+  display:inline-block;
+}
 
 .logo img{
-  width:320px;
+  min-width:330px;
   height:auto;
-  padding:.5em 0;
+  padding: 1.6rem 0 1.6rem 0;
+  margin-top: 9px;
+  margin-left: 7px;
 }
+
+
 .nav {
   padding-left:0;
   margin-bottom:0;
-  margin-top:7px;
+  margin-top:0;
 }
 .nav-item {
   display: inline-block;
@@ -254,6 +260,8 @@ grid-template-columns: repeat(1,1fr);
   background-size: cover;
 }
 
+
+
 .postlist-item-image {background-size: cover; height:75%}
 
 .postlist-item-text {
@@ -277,7 +285,8 @@ grid-template-columns: repeat(1,1fr);
 
 .postlist-date,
 .postlist-item:before {
-  font-size: 1rem; /* 13px /16 */
+  font-size: 1.6rem;
+  line-height:2;
   color: var(--white);
 }
 .postlist-date {
@@ -292,7 +301,10 @@ grid-template-columns: repeat(1,1fr);
   font-weight: 700;
 }
 
-
+.postlist-item-text:hover{
+  background-color: var(--outline);
+  color: var(--darkgray)
+}
 
 /*footer styles*/
 footer {
