@@ -1,3 +1,6 @@
-_site/
+_site/*
+!_site/admin/
+!_site/admin/config.yml
+!_site/admin/index.html
 node_modules/
 package-lock.json
