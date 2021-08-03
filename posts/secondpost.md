@@ -1,13 +1,13 @@
 ---
 layout: layouts/post.njk
-title: This is my second post.
-description: This is a post on My Blog about leveraging agile frameworks.
+title: This is my second post
+description: This is a post on My Blog about leveraging agile frameworks
 date: 2021-02-01
 image: https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80
 tags:
-  - number 2
+  - number 2 rr
 ---
-## ADDING TEXT
+# ADDING TEXT
 
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
 
