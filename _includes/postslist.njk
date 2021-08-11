@@ -1,17 +1,15 @@
-<div class="postlist">
+<div>
   {% for post in postslist | reverse %}
-    <div class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}" style="{% if post.data.image %}background-image:url({{post.data.image}}) {% endif %}">
-      <div class="postlist-item-text">
-        <a href="{{ post.url | url }}" class="postlist-link">
           {% if post.data.title %}
-            <h2 class="h3">{{ post.data.title }}</h2>
+            <h2>{{ post.data.title }}</h2>
           {% else %}
-            <h2 class="h6">{{ post.url }}</h2>
+            <h2>{{ post.url }}</h2>
           {% endif %}
-        </a>
-        <p>
-          <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-        </p>
+
+          <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+
+        <p>{{ post.data.description | safe }}</p>
+        {{ post.templateContent  | safe }}
         {# {% for tag in post.data.tags | filterTagList %}
           {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
           <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>

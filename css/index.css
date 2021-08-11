@@ -28,6 +28,7 @@ body {
   color: var(--darkgray);
   background-color: var(--white);
 
+
 }
 
 body {
@@ -35,6 +36,10 @@ body {
       grid-template-columns: 1fr minmax(75ch, 1170px) 1fr;
       grid-template-rows: repeat(3, auto);
       font-family: 'Open Sans', sans-serif;
+        background: #fff;
+  color: #252525;
+  line-height: 1.5;
+  height:100%;
 }
 
 * :focus-visible {background-color:#EB984E;color:var(--darkgray);outline:none;}
@@ -50,13 +55,6 @@ body {
   --size-900: 4.2rem;
 }
 
-body {
-  background: #f3f3f3;
-  color: #252525;
-  line-height: 1.5;
-  font-family: 'Open Sans', sans-serif;
-  padding: 2rem 0;
-}
 
 a:not([class]) {
   color: currentColor;
@@ -88,6 +86,8 @@ h1, .h1 {
 
 h2, .h2 {
   font-size: var(--size-600);
+  border-top: 5px solid var(--srared);
+  padding-top:var(--size-500);
 }
 
 h3, .h3 {
@@ -95,15 +95,15 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-size: var(--size-400);
+  font-size: var(--size-500);
 }
 
 h5 .h5 {
-  font-size: var(--size-400);
+  font-size: var(--size-500);
 }
 
 h6, .h6 {
-  font-size: var(--size-400);
+  font-size: var(--size-600);
 }
 
 img {
@@ -145,33 +145,32 @@ h2, .h2
   max-width: 55ch;
 }
 
-.post {
+.article {
   --flow-space: var(--size-700);
 
   width: 90vw;
   width: clamp(16rem, 90vw, 70rem);
-  margin-left: auto;
-  margin-right: auto;
+
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-.post time {
+.article time {
   --flow-space: var(--size-400);
-
+  font-size: var(--size-400);
   display: block;
 }
 
-.post :is(h2, h3) {
+.article :is(h2, h3) {
   --flow-space: var(--size-900);
 }
 
-.post :is(h2, h3) + * {
+.article :is(h2, h3) + * {
   --flow-space: var(--size-400);
 }
 
-.post figure,
-.post figure + * {
+.article figure,
+.article figure + * {
   --flow-space: var(--size-900);
 }
 
@@ -197,9 +196,7 @@ h2, .h2
     max-width: 40ch;
   }
 
-  .post time {
-    font-size: var(--size-600);
-  }
+
 }
 
 
@@ -333,7 +330,7 @@ main{
 /*frontpage*/
 
 /* Posts list */
-.postlist {
+.articlelist {
   list-style: none;
   padding: 0;
   display:grid;
@@ -346,21 +343,21 @@ main{
 
 
 @media (max-width: 768px) {
-  .postlist {
+  .articlelist {
 grid-template-columns: repeat(2,1fr);
   }
 }
 
 
 @media (max-width: 375px) {
-  .postlist {
+  .articlelist {
 grid-template-columns: repeat(1,1fr);
   }
 }
 
 
 
-.postlist-item {
+.articlelist-item {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -371,9 +368,9 @@ grid-template-columns: repeat(1,1fr);
 
 
 
-.postlist-item-image {background-size: cover; height:75%}
+.articlelist-item-image {background-size: cover; height:75%}
 
-.postlist-item-text {
+.articlelist-item-text {
       display: flex;
     flex-direction: column;
     align-content: flex-start;
@@ -385,31 +382,31 @@ grid-template-columns: repeat(1,1fr);
 
 }
 
-.postlist-item-text a, .postlist-item h2 {
+.articlelist-item-text a, .articlelist-item h2 {
   color:var(--white);
   text-decoration:none;
 }
-.postlist-item-text a h2, .postlist-item-text p  {margin:0;}
-.postlist-item-text a {display:block}
+.articlelist-item-text a h2, .articlelist-item-text p  {margin:0;}
+.articlelist-item-text a {display:block}
 
-.postlist-date,
-.postlist-item:before {
+.articlelist-date,
+.articlelist-item:before {
   font-size: var(--size-400);
   line-height:2;
   color: var(--white);
 }
-.postlist-date {
+.articlelist-date {
   word-spacing: -0.5px;
 }
 
-.postlist-item-active .postlist-link {
+.articlelist-item-active .articlelist-link {
   font-weight: bold;
 }
-.tmpl-home .postlist-link {
+.tmpl-home .articlelist-link {
   font-weight: 700;
 }
 
-.postlist-item-text:hover{
+.articlelist-item-text:hover{
   background-color: var(--outline);
   color: var(--darkgray)
 }
@@ -421,7 +418,6 @@ footer {
   grid-column-start:1;
   grid-column-end:3;
 }
-
 
 table {
   margin: 1em 0;
@@ -471,7 +467,7 @@ table th {
 
 
 /* Tags */
-.post-tag {
+.article-tag {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -485,15 +481,15 @@ table th {
   text-decoration: none;
   line-height: 1.8;
 }
-a[href].post-tag,
-a[href].post-tag:visited {
+a[href].article-tag,
+a[href].article-tag:visited {
   color: inherit;
 }
-a[href].post-tag:hover,
-a[href].post-tag:focus {
+a[href].article-tag:hover,
+a[href].article-tag:focus {
   background-color: var(--lightgray);
 }
-.postlist-item > .post-tag {
+.articlelist-item > .article-tag {
   align-self: center;
 }
 
