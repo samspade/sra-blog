@@ -34,7 +34,7 @@ body {
 body {
   display:grid;
       grid-template-columns: 1fr minmax(75ch, 1170px) 1fr;
-      grid-template-rows: repeat(3, auto);
+      grid-template-rows: min-content repeat(2, auto);
       font-family: 'Open Sans', sans-serif;
         background: #fff;
   color: #252525;
