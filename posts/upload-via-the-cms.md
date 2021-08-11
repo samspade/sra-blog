@@ -7,7 +7,7 @@ image: https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixid=MnwxMjA
 tags:
   - first
 ---
-## This is the best. Isn't it?
+## This is the best
 
 This is uploaded by using the Netlify CMS editor.
 
