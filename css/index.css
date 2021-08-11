@@ -8,13 +8,18 @@
   --hrgrey: #e7e7e7;
   --outline: #eb984e;
 }
+/* Font import */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
 
 /* Global stylesheet */
 * {
   box-sizing: border-box;
 }
 
-html {font-size: 10px;}
 
 html,
 body {
@@ -29,72 +34,176 @@ body {
   display:grid;
       grid-template-columns: 1fr minmax(75ch, 1170px) 1fr;
       grid-template-rows: repeat(3, auto);
-        font-size: 1.6rem;
-        font-family: 'Open Sans', sans-serif;
+      font-family: 'Open Sans', sans-serif;
 }
 
 * :focus-visible {background-color:#EB984E;color:var(--darkgray);outline:none;}
 
-/*Typography*/
 
-h1,.h1 {
-    font-size: 3.8rem;
-    line-height: 1.3;
-    font-family: 'Open sans bold',-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
-    letter-spacing: -0.03em
+:root {
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.33rem;
+  --size-600: 1.77rem;
+  --size-700: 2.36rem;
+  --size-800: 3.15rem;
+  --size-900: 4.2rem;
 }
 
-@media (min-width: 768px) {
-    h1,.h1 {
-        font-size:3.8rem;
-        line-height: 1.3
-    }
+body {
+  background: #f3f3f3;
+  color: #252525;
+  line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
+  padding: 2rem 0;
 }
 
-@media (max-width: 767px) {
-    h1,.h1 {
-        margin:5px 0 20px 0
-    }
+a:not([class]) {
+  color: currentColor;
 }
 
-@media (min-width: 48em) {
-    article h1 {
-        margin-top:.1em
-    }
+:focus {
+  outline: 2px dashed;
+  outline-offset: 0.25rem;
 }
 
-h2,.h2 {
-    font-size: 2.5rem;
-    line-height: 1.3;
-    margin-bottom: 25px;
-    letter-spacing: -0.03em;
-    font-family: 'Open sans bold',-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
-    color: #191919
+main:focus {
+  outline: none;
 }
 
-@media (min-width: 768px) {
-    h2,.h2 {
-        font-size:2.8rem;
-        line-height: 1.25
-    }
+
+[href]:hover {
+  text-decoration: none;
 }
 
-h3,.h3 {
-    font-size: 2.3rem;
-    line-height: 1.3;
-    margin-bottom: 25px;
-    letter-spacing: -0.03em;
-    font-family: 'Open sans bold',-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
-    color: #191919
+
+h1,
+h2 {
+  font-weight: 900;
 }
 
-h4,.h4 {
-    font-size: 2.0rem;
-    margin-bottom: 25px;
-    letter-spacing: -0.03em;
-    font-family: 'Open sans bold',-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
-    color: #191919
+h1, .h1 {
+  font-size: var(--size-700);
 }
+
+h2, .h2 {
+  font-size: var(--size-600);
+}
+
+h3, .h3 {
+  font-size: var(--size-500);
+}
+
+h4, .h4 {
+  font-size: var(--size-400);
+}
+
+h5 .h5 {
+  font-size: var(--size-400);
+}
+
+h6, .h6 {
+  font-size: var(--size-400);
+}
+
+img {
+  max-width: min(55rem, 100%);
+}
+
+figcaption {
+  font-size: var(--size-400);
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+blockquote {
+  padding-left: var(--size-600);
+  border-left: 5px solid;
+  font-style: italic;
+}
+
+::selection {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.99);
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+p,
+li {
+  max-width: 60ch;
+}
+
+h1 {
+  max-width: 35ch;
+}
+
+h2, .h2
+,h3,.h3 {
+  max-width: 55ch;
+}
+
+.post {
+  --flow-space: var(--size-700);
+
+  width: 90vw;
+  width: clamp(16rem, 90vw, 70rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.post time {
+  --flow-space: var(--size-400);
+
+  display: block;
+}
+
+.post :is(h2, h3) {
+  --flow-space: var(--size-900);
+}
+
+.post :is(h2, h3) + * {
+  --flow-space: var(--size-400);
+}
+
+.post figure,
+.post figure + * {
+  --flow-space: var(--size-900);
+}
+
+@media (min-width: 45em) {
+  h1,.h1 {
+    font-size: var(--size-900);
+  }
+
+  h2,.h2 {
+    font-size: var(--size-700);
+  }
+
+  p {
+    font-size: var(--size-500);
+  }
+
+  figcaption {
+    font-size: var(--size-400);
+  }
+
+  blockquote p {
+    font-size: var(--size-600);
+    max-width: 40ch;
+  }
+
+  .post time {
+    font-size: var(--size-600);
+  }
+}
+
+
+
 
 p:last-child {
   margin-bottom: 0;
@@ -139,7 +248,7 @@ grid-template-rows: fit-content, fit-content;
   width:100%;
   align-items: stretch;
   justify-content: flex-end;
-      font-size: 1.2rem;
+      font-size: var(--size-500);
     line-height: 1.5;
 
 
@@ -188,7 +297,7 @@ grid-template-rows: fit-content, fit-content;
   display: inline-block;
   margin-right: 1em;
   padding:1rem;
-  font-size:1.6rem;
+  font-size:var(--size-500);
   font-weight:700;
    border-bottom: 5px solid transparent;
 
@@ -285,7 +394,7 @@ grid-template-columns: repeat(1,1fr);
 
 .postlist-date,
 .postlist-item:before {
-  font-size: 1.6rem;
+  font-size: var(--size-400);
   line-height:2;
   color: var(--white);
 }
@@ -297,7 +406,6 @@ grid-template-columns: repeat(1,1fr);
   font-weight: bold;
 }
 .tmpl-home .postlist-link {
-  font-size: 1.1875rem; /* 19px /16 */
   font-weight: 700;
 }
 
@@ -368,7 +476,7 @@ table th {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
-  font-size: 0.6875em; /* 11px /16 */
+  font-size: var(--size-400);
   padding: 0.09090909090909em 0.3636363636364em; /* 1px 4px /11 */
   margin-left: 0.8em; /* 8px /10 */
   color: var(--darkgray);

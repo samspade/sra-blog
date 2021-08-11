@@ -4,9 +4,9 @@
       <div class="postlist-item-text">
         <a href="{{ post.url | url }}" class="postlist-link">
           {% if post.data.title %}
-            <h2>{{ post.data.title }}</h2>
+            <h2 class="h3">{{ post.data.title }}</h2>
           {% else %}
-            <h2>{{ post.url }}</h2>
+            <h2 class="h6">{{ post.url }}</h2>
           {% endif %}
         </a>
         <p>
