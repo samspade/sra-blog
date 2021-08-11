@@ -1,0 +1,21 @@
+<ul class="archivepostlist">
+  {% for post in postslist | reverse %}
+     <li class="archivepostlist-item-text">
+        <a href="{{ post.url | url }}" class="archivepostlist-link">
+          {% if post.data.title %}
+            <p>{{ post.data.title }}</p>
+          {% else %}
+            <small>{{ post.url }}</small>
+          {% endif %}
+        </a>
+       
+          <time class="archivepostlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      
+        {# {% for tag in post.data.tags | filterTagList %}
+          {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="archivepost-tag">{{ tag }}</a>
+        {% endfor %} #}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

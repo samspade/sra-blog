@@ -1,6 +1,7 @@
 ---
-layout: layouts/home.njk
-permalink: /posts/
+layout: layouts/base.njk
+description: This is the archive of messages from the SRA
+permalink: /archive/
 eleventyNavigation:
   key: Archive
   order: 2
@@ -9,4 +10,5 @@ eleventyNavigation:
 <h1>Archive</h1>
 
 {% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+{% set postslistCounter = collections.posts | length %}
+{% include "archivelist.njk" %}

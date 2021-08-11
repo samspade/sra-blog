@@ -33,7 +33,7 @@ body {
 body {
   display:grid;
       grid-template-columns: 1fr minmax(75ch, 1170px) 1fr;
-      grid-template-rows: repeat(3, auto);
+      grid-template-rows: min-content repeat(2, auto);
       font-family: 'Open Sans', sans-serif;
 }
 
@@ -55,7 +55,7 @@ body {
   color: #252525;
   line-height: 1.5;
   font-family: 'Open Sans', sans-serif;
-  padding: 2rem 0;
+  height:100vh;
 }
 
 a:not([class]) {
